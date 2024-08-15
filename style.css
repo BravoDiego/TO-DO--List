@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --dark-violet: #5f4b89;
+    --violet: #6E56A0;
+    --dark-grey: #494747;
+    --grey: #D3D5D4;
+    --light-grey: #e9e9e9;
+    --light-grey-transparent: #e9e9e972;
+    --white: #f4f4f4;
+    --r: 8px;
+    --size-btn: 2.5rem;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Montserrat";
+}
+
+body button, body input, body select {
+    cursor: pointer;
+}
+
+body {
+    background-color: var(--white);
+}
+
+body > main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > main > header > h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--violet);
+    padding: 1.5rem;
+}
+
+body > main > section#main {
+    width: 62rem;
+}
+
+body > main > section#main > * {
+    margin-bottom: 1rem;
+}
+
+body > main > section#main > nav#menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+body > main > section#main > nav#menu > * {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 1.3rem;
+    border-radius: var(--r);
+    width: 16%;
+}
+
+body > main > section#main > nav#menu > select#select-menu {
+    background-color: var(--grey);
+    outline: none;
+    border: none;
+}
+
+body > main > section#main > nav#menu > button#btn-add-task {
+    outline: none;
+    border: none;
+    background-color: var(--violet);
+    color: var(--white);
+}
+
+body > main > section#main > nav#menu > button#btn-add-task:hover {
+    background-color: var(--dark-violet);
+}
+
+body > main > section#main > article#tasks {
+    background-color: var(--light-grey);
+    border-radius: var(--r);
+}
+
+body > main > section#main > article#tasks > .btn-import-export {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+body > main > section#main > article#tasks > .btn-import-export > * {
+    border: none;
+    background-color: var(--white);
+    width: var(--size-btn);
+    height: var(--size-btn);
+    margin-left: 1rem;
+    border-radius: var(--r);
+    font-size: 2rem;
+    color: var(--dark-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body > main > section#main > article#tasks > .btn-import-export > *:hover {
+    background-color: var(--grey);
+}
+
+body > main > section#main > article#tasks > .btn-import-export .btn-import {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul {
+    padding-inline-start: 0;
+    padding: 1.5rem;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li {
+    list-style: none;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: var(--r);
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component {
+    display: flex;
+    justify-content: space-between;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .toggle-task {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: var(--size-btn);
+    height: var(--size-btn);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .toggle-task > input.checkbox-task {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .toggle-task > span.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--light-grey);
+    border-radius: var(--r);
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .toggle-task:hover > input.checkbox-task ~ .checkmark {
+    background-color: var(--grey);
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .toggle-task > input.checkbox-task:checked ~ .checkmark {
+    background-color: var(--violet);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .toggle-task > input.checkbox-task:checked ~ .checkmark::after {
+    display: block;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .toggle-task > span.checkmark:after {
+    left: 0.85rem;
+    top: 0.3rem;
+    width: 12px;
+    height: 25px;
+    border: solid var(--white);
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg);
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .info-task {
+    width: 80%;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .btn-task {
+    display: flex;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .btn-task > button {
+    width: var(--size-btn);
+    height: var(--size-btn); 
+    font-size: 2rem;
+    color: var(--dark-grey);
+    border: none;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--r);
+    margin-left: 0.75rem;
+}
+
+body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .btn-task > button:hover {
+    background-color: var(--grey);
+}
+
+body > main > section#create-task {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-grey-transparent);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initialement transparent */
+    transform: translateY(-20px); /* Déplacer légèrement vers le haut */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#create-task.show {
+    display: flex; /* Afficher la section */
+    opacity: 1; /* Rendre la section opaque */
+    transform: translateY(0); /* Réinitialiser le déplacement */
+}
+
+body > main > section#create-task > article {
+    background-color: var(--violet);
+    padding: 2rem;
+    border-radius: var(--r);
+    color: var(--white);
+    font-size: 2rem;
+}
+
+body > main > section#create-task > article > #title-add > h3 {
+    margin-bottom: 0.5rem;
+}
+
+body > main > section#create-task > article input {
+    width: 60rem;
+    height: 3rem;
+    font-size: 2rem;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+    outline: none;
+    border-radius: var(--r);
+    padding: 1rem;
+}
+
+body > main > section#create-task > article > #submit-new-task > button {
+    outline: none;
+    border: none;
+    background-color: var(--grey);
+    color: var(--dark-grey);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 1.3rem;
+    border-radius: var(--r);
+    width: 16%;
+}
+
+body > main > section#create-task > article > #submit-new-task {
+    display: flex;
+    justify-content: space-between;
+}
+
+body > main > section#edit-task  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-grey-transparent);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initialement transparent */
+    transform: translateY(-20px); /* Déplacer légèrement vers le haut */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#edit-task.show {
+    display: flex; /* Afficher la section */
+    opacity: 1; /* Rendre la section opaque */
+    transform: translateY(0); /* Réinitialiser le déplacement */
+}
+
+body > main > section#edit-task > article {
+    background-color: var(--grey);
+    padding: 2rem;
+    border-radius: var(--r);
+    color: var(--dark-grey);
+    font-size: 2rem;
+}
+
+body > main > section#edit-task > article > #title-add > h3 {
+    margin-bottom: 0.5rem;
+}
+
+body > main > section#edit-task > article input {
+    width: 60rem;
+    height: 3rem;
+    font-size: 2rem;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+    outline: none;
+    border-radius: var(--r);
+    padding: 1rem;
+}
+body > main > section#edit-task > article > #submit-edit-task {
+    display: flex;
+    justify-content: space-between;
+}
+
+body > main > section#edit-task > article > #submit-edit-task > button {
+    outline: none;
+    border: none;
+    background-color: var(--violet);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 1.3rem;
+    border-radius: var(--r);
+    width: 20%;
+}
+
+
+@media (max-width:1030px) {
+    body > main > section#main {
+        width: 95%;
+    }
+
+    body > main > section#main > nav#menu > * {
+        font-size: 1rem;
+        padding: 0.8rem 1.1rem;
+        width: 18%;
+    }
+
+    body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .info-task {
+       width: 70%;
+    }
+
+    body > main > section:not(:first-child) > article {
+        width: 90%;
+    }
+
+    html > body > main > section:not(:first-child) > article input {
+        width: 100% !important;
+    }
+
+    body > main > section:not(:first-child) > article > div > button {
+        width: 25%;
+    }
+}
+
+@media (max-width:700px) {
+    body > main > section#main > nav#menu > * {
+        font-size: 0.8rem;
+        padding: 0.8rem 0.6rem;
+        width: 15%;
+    }
+
+    body > main > section#create-task > article > #submit-new-task > button {
+        width: 40%;
+    }
+
+    body > main > section#edit-task > article > div > button {
+        width: 40% !important;
+    }
+}
+
+@media (max-width:600px) {
+    body > main > section#main > nav#menu > * {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.1rem;
+        width: 25%;
+    }
+
+    body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .info-task {
+        width: 60%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width:450px) {
+    body > main > section#main > nav#menu > * {
+        width: 30%;
+    }
+
+    body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .info-task {
+        width: 50%;
+        font-size: 0.9rem;
+    }
+
+    body > main > section#create-task > article > #submit-new-task > button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    body > main > section#edit-task > article > #submit-edit-task > button {
+        width: 100% !important;
+        margin-top: 1rem;
+    }
+
+    body > main > section:not(:first-child) > article > div {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:360px) {
+    body > main > header > h1 {
+        font-size: 2.5rem;
+    }
+
+    body > main > section#main > nav#menu > * {
+        width: 40%;
+    }
+
+    body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .info-task {
+        width: 35%;
+    }
+}

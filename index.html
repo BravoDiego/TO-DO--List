@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do APP</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <main>
+        <header><h1>TO-DO LIST</h1></header>
+        <section id="main">
+            <nav id="menu">
+                <button id="btn-add-task">Add Task</button>
+                <select name="select-menu" id="select-menu">
+                    <option value="today">Today</option>
+                    <option value="all">All</option>
+                    <option value="delayed">Delayed</option>
+                    <option value="done">Done</option>
+                </select>
+            </nav>
+            <article id="tasks">
+                <div class="btn-import-export">
+                    <button id="btn-export">
+                        <ion-icon title="Export TO-DO List" name="download" class="btn-export"></ion-icon>
+                    </button>
+                    <label>
+                        <input type="file" name="export-file-to-do-list" style="display: none;" accept=".json" id="input-fil-import">
+                        <ion-icon title="Import TO-DO List" name="download" class="btn-import"></ion-icon>
+                    </label>
+                </div>
+                <ul id="tasks-ul">
+                    <!-- <li class="tasks-li">
+                        <article class="task-component">
+                            <label class="toggle-task">
+                                <input type="checkbox" name="checkbox-task-0" class="checkbox-task">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="info-task">
+                                <h3 class="title-task" name="0">Create a react project 👀</h3>
+                                <div class="date-info-task">
+                                    <span class="date-create-task">20:01, 14/08/2024</span>
+                                    <span>to do for</span>
+                                    <span class="date-to-do-task">15/08/2024</span>
+                                </div>
+                            </div>
+                            <div class="btn-task">
+                                <button class="btn-suppr-task" name="0"><ion-icon name="trash"></ion-icon></button>
+                                <button class="btn-edit-task"><ion-icon name="create"></ion-icon></button>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="tasks-li">
+                        <article class="task-component">
+                            <label class="toggle-task">
+                                <input type="checkbox" name="checkbox-task-1" class="checkbox-task">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="info-task">
+                                <h3 class="title-task" name="1">Create a react project 👀</h3>
+                                <div class="date-info-task">
+                                    <span class="date-create-task">20:01, 14/08/2024</span>
+                                    <span>to do for</span>
+                                    <span class="data-to-do-task">15/08/2024</span>
+                                </div>
+                            </div>
+                            <div class="btn-task">
+                                <button class="btn-suppr-task"><ion-icon name="trash"></ion-icon></button>
+                                <button class="btn-edit-task"><ion-icon name="create"></ion-icon></button>
+                            </div>
+                        </article>
+                    </li> -->
+                </ul>
+            </article>
+        </section>
+        <section id="create-task">
+            <article>
+                <div id="title-add">
+                    <h3>Title</h3>
+                    <input type="text" id="task-title">
+                </div>
+                <div id="date-to-do-add">
+                    <h3>Deadline</h3>
+                    <input type="date" id="task-deadline">
+                </div>
+                <div id="submit-new-task">
+                    <button id="btn-submit-new-task">Add Task</button>
+                    <button id="btn-cancel-new-task">Cancel</button>
+                </div>
+            </article>
+        </section>
+        <section id="edit-task">
+            <article>
+                <div id="title-edit">
+                    <h3>Title</h3>
+                    <input type="text" id="edit-task-title">
+                </div>
+                <div id="date-to-do-edit">
+                    <h3>Deadline</h3>
+                    <input type="date" id="edit-task-deadline">
+                </div>
+                <div id="submit-edit-task">
+                    <button id="btn-submit-edit-task">Save Changes</button>
+                    <button id="btn-cancel-edit-task">Cancel</button>
+                </div>
+            </article>
+        </section>        
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>
