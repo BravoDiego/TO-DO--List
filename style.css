@@ -342,6 +342,13 @@ body > main > section#edit-task > article > #submit-edit-task > button {
 @media (max-width:1030px) {
     body > main > section#main {
         width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body > main > section#main > nav#menu {
+        width: 100%;
     }
 
     body > main > section#main > nav#menu > * {
@@ -355,7 +362,7 @@ body > main > section#edit-task > article > #submit-edit-task > button {
     }
 
     body > main > section:not(:first-child) > article {
-        width: 90%;
+        width: 100%;
     }
 
     html > body > main > section:not(:first-child) > article input {
@@ -399,6 +406,10 @@ body > main > section#edit-task > article > #submit-edit-task > button {
 @media (max-width:450px) {
     body > main > section#main > nav#menu > * {
         width: 30%;
+    }
+
+    body > main > section#main > article#tasks > .btn-import-export {
+        flex-direction: row;
     }
 
     body > main > section#main > article#tasks > ul#tasks-ul > li.tasks-li > article.task-component > .info-task {
